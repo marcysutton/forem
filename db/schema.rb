@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_25_215546) do
+ActiveRecord::Schema.define(version: 2020_07_27_052235) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -1197,6 +1197,7 @@ ActiveRecord::Schema.define(version: 2020_07_25_215546) do
     t.boolean "export_requested", default: false
     t.datetime "exported_at"
     t.string "facebook_url"
+    t.integer "failed_attempts", default: 0
     t.boolean "feed_admin_publish_permission", default: true
     t.datetime "feed_fetched_at", default: "2017-01-01 05:00:00"
     t.boolean "feed_mark_canonical", default: false
@@ -1231,6 +1232,7 @@ ActiveRecord::Schema.define(version: 2020_07_25_215546) do
     t.inet "last_sign_in_ip"
     t.string "linkedin_url"
     t.string "location"
+    t.datetime "locked_at"
     t.boolean "looking_for_work", default: false
     t.boolean "looking_for_work_publicly", default: false
     t.string "mastodon_url"
@@ -1275,6 +1277,7 @@ ActiveRecord::Schema.define(version: 2020_07_25_215546) do
     t.integer "twitter_following_count"
     t.string "twitter_username"
     t.string "unconfirmed_email"
+    t.string "unlock_token"
     t.integer "unspent_credits_count", default: 0, null: false
     t.datetime "updated_at", null: false
     t.string "username"
